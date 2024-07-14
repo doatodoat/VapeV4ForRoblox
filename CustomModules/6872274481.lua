@@ -4117,6 +4117,690 @@ run(function()
 		Default = true
 	})
 end)
+		runFunction(function()
+    AntiBan = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+        Name = "AntiBan",
+        Function = function(callback)
+            if callback then
+				repeat task.wait() until game:IsLoaded()
+                local groupId = 5774246
+                local roleId = 121
+                local function checkUserRole(player)
+                    if player:IsInGroup(groupId) and player:GetRankInGroup(groupId) == roleId then
+                        warningNotification("Vape", "A Staff Has Joined The Game, Leaving....", 60)
+						wait(2)
+                        bedwars.ClientHandler:Get("TeleportToLobby"):SendToServer()
+                    end
+                end
+                local function checkAllUsersRoles()
+                    for _, player in pairs(game.Players:GetPlayers()) do
+                        checkUserRole(player)
+                    end
+                end
+                checkAllUsersRoles()
+            end
+        end
+    })
+end)
+
+			runFunction(function()
+	CustomKeystokes = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+		Name = "CustomKeystokes",
+		Function = function(callback)
+			if callback then 
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/Modules/main/Keystrokes"))()
+			end
+		end
+	})
+end)
+runFunction(function()
+	local transformed = false
+	local TexturePacks = {["Enabled"] = false}
+	local packselected = {["Value"] = "OldBedwars"}
+
+	local packfunctions = {
+		SeventhPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/Pack%237"))()  
+			end)
+		end,
+		EighthPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/1024xPack"))()  
+			end)
+		end,
+		SixthPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/Pack%236"))()  
+			end)
+		end,
+		FifthPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/Pack%235"))()  
+			end)
+		end,
+		FourthPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/Pack%234"))()  
+			end)
+		end,
+		ThirdPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/Modules/main/TexturePack"))()  
+			end)
+		end,
+		SecondPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/Pack%232"))()  
+			end)
+		end,
+		FirstPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/Pack%231"))()  
+			end)
+		end,
+		CottonCandy = function() 
+			task.spawn(function() 
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/CottonCandy256x"))()           
+			end)
+		end,
+		EgirlPack = function() 
+			task.spawn(function() 	
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/E-Girl"))()  		             
+			end)
+		end,
+		GlizzyPack = function() 
+			task.spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/Glizzy"))()   
+			end)
+        end,
+		PrivatePack = function() 
+			task.spawn(function()
+				local Players = game:GetService("Players")
+				local ReplicatedStorage = game:GetService("ReplicatedStorage")
+				local Workspace = game:GetService("Workspace")
+				local objs = game:GetObjects("rbxassetid://14161283331")
+				local import = objs[1]
+				import.Parent = ReplicatedStorage
+				local index = {
+					{
+						name = "wood_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Wood_Sword"),
+					},	
+					{
+						name = "stone_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Stone_Sword"),
+					},
+					{
+						name = "iron_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Iron_Sword"),
+					},
+					{
+						name = "diamond_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Diamond_Sword"),
+					},
+					{
+						name = "emerald_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Emerald_Sword"),
+					},
+					{
+						name = "rageblade",
+						offset = CFrame.Angles(math.rad(0),math.rad(-100),math.rad(90)),
+						model = import:WaitForChild("Rageblade"),
+					}, 
+					{
+						name = "wood_pickaxe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-180), math.rad(-95)),
+						model = import:WaitForChild("Wood_Pickaxe"),
+					},
+					{
+						name = "stone_pickaxe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-180), math.rad(-95)),
+						model = import:WaitForChild("Stone_Pickaxe"),
+					},
+					{
+						name = "iron_pickaxe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-18033), math.rad(-95)),
+						model = import:WaitForChild("Iron_Pickaxe"),
+					},
+					{
+						name = "diamond_pickaxe",
+						offset = CFrame.Angles(math.rad(0), math.rad(80), math.rad(-95)),
+						model = import:WaitForChild("Diamond_Pickaxe"),
+					},	
+					{
+						name = "wood_axe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+						model = import:WaitForChild("Wood_Axe"),
+					},	
+					{
+						name = "stone_axe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+						model = import:WaitForChild("Stone_Axe"),
+					},	
+					{
+						name = "iron_axe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+						model = import:WaitForChild("Iron_Axe"),
+					},	
+					{
+						name = "diamond_axe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-95)),
+						model = import:WaitForChild("Diamond_Axe"),
+					},	
+					{
+						name = "fireball",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Fireball"),
+					},	
+					{
+						name = "telepearl",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Telepearl"),
+					},
+					{
+						name = "diamond",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Diamond"),
+					},
+					{
+						name = "iron",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Iron"),
+					},
+					{
+						name = "gold",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Gold"),
+					},
+					{
+						name = "emerald",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Emerald"),
+					},
+					{
+						name = "wood_bow",
+						offset = CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)),
+						model = import:WaitForChild("Bow"),
+					},
+					{
+						name = "wood_crossbow",
+						offset = CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)),
+						model = import:WaitForChild("Bow"),
+					},
+					{
+						name = "tactical_crossbow",
+						offset = CFrame.Angles(math.rad(0), math.rad(180), math.rad(-90)),
+						model = import:WaitForChild("Bow"),
+					},
+				}
+				local func = Workspace.Camera.Viewmodel.ChildAdded:Connect(function(tool)	
+					if not tool:IsA("Accessory") then return end	
+					for _, v in ipairs(index) do	
+						if v.name == tool.Name then		
+							for _, part in ipairs(tool:GetDescendants()) do
+								if part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("UnionOperation") then				
+									part.Transparency = 1
+								end			
+							end		
+							local model = v.model:Clone()
+							model.CFrame = tool:WaitForChild("Handle").CFrame * v.offset
+							model.CFrame *= CFrame.Angles(math.rad(0), math.rad(-50), math.rad(0))
+							model.Parent = tool			
+							local weld = Instance.new("WeldConstraint", model)
+							weld.Part0 = model
+							weld.Part1 = tool:WaitForChild("Handle")			
+							local tool2 = Players.LocalPlayer.Character:WaitForChild(tool.Name)			
+							for _, part in ipairs(tool2:GetDescendants()) do
+								if part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("UnionOperation") then				
+									part.Transparency = 1				
+								end			
+							end			
+							local model2 = v.model:Clone()
+							model2.Anchored = false
+							model2.CFrame = tool2:WaitForChild("Handle").CFrame * v.offset
+							model2.CFrame *= CFrame.Angles(math.rad(0), math.rad(-50), math.rad(0))
+							if v.name:match("rageblade") then
+								model2.CFrame *= CFrame.new(0.7, 0, -1)                           
+							elseif v.name:match("sword") or v.name:match("blade") then
+								model2.CFrame *= CFrame.new(.6, 0, -1.1) - Vector3.new(0, 0, -.3)
+							elseif v.name:match("axe") and not v.name:match("pickaxe") and v.name:match("diamond") then
+								model2.CFrame *= CFrame.new(.08, 0, -1.1) - Vector3.new(0, 0, -1.1)
+							elseif v.name:match("axe") and not v.name:match("pickaxe") and not v.name:match("diamond") then
+								model2.CFrame *= CFrame.new(-.2, 0, -2.4) + Vector3.new(0, 0, 2.12)
+							elseif v.name:match("iron") then
+								model2.CFrame *= CFrame.new(0, -.24, 0)
+							elseif v.name:match("gold") then
+								model2.CFrame *= CFrame.new(0, .03, 0)
+							elseif v.name:match("diamond") then
+								model2.CFrame *= CFrame.new(0, .027, 0)
+							elseif v.name:match("emerald") then
+								model2.CFrame *= CFrame.new(0, .001, 0)
+							elseif v.name:match("telepearl") then
+								model2.CFrame *= CFrame.new(.1, 0, .1)
+							elseif v.name:match("fireball") then
+								model2.CFrame *= CFrame.new(.28, .1, 0)
+							elseif v.name:match("bow") and not v.name:match("crossbow") then
+								model2.CFrame *= CFrame.new(-.29, .1, -.2)
+							elseif v.name:match("wood_crossbow") and not v.name:match("tactical_crossbow") then
+								model2.CFrame *= CFrame.new(-.6, 0, 0)
+							elseif v.name:match("tactical_crossbow") and not v.name:match("wood_crossbow") then
+								model2.CFrame *= CFrame.new(-.5, 0, -1.2)
+							else
+								model2.CFrame *= CFrame.new(.2, 0, -.2)
+							end
+							model2.Parent = tool2
+							local weld2 = Instance.new("WeldConstraint", model)
+							weld2.Part0 = model2
+							weld2.Part1 = tool2:WaitForChild("Handle")
+						end
+					end
+				end)            
+			end)
+        end,
+		DemonSlayerPack = function() 
+			task.spawn(function()
+				local Players = game:GetService("Players")
+				local ReplicatedStorage = game:GetService("ReplicatedStorage")
+				local Workspace = game:GetService("Workspace")
+				local objs = game:GetObjects("rbxassetid://14241215869")
+				local import = objs[1]
+				import.Parent = ReplicatedStorage
+				local index = {
+					{
+						name = "wood_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Wood_Sword"),
+					},	
+					{
+						name = "stone_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Stone_Sword"),
+					},
+					{
+						name = "iron_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Iron_Sword"),
+					},
+					{
+						name = "diamond_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Diamond_Sword"),
+					},
+					{
+						name = "emerald_sword",
+						offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-90)),
+						model = import:WaitForChild("Emerald_Sword"),
+					},
+					{
+						name = "wood_pickaxe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-180), math.rad(-95)),
+						model = import:WaitForChild("Wood_Pickaxe"),
+					},
+					{
+						name = "stone_pickaxe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-180), math.rad(-95)),
+						model = import:WaitForChild("Stone_Pickaxe"),
+					},
+					{
+						name = "iron_pickaxe",
+						offset = CFrame.Angles(math.rad(0), math.rad(-180), math.rad(-95)),
+						model = import:WaitForChild("Iron_Pickaxe"),
+					},
+					{
+						name = "diamond_pickaxe",
+						offset = CFrame.Angles(math.rad(0), math.rad(90), math.rad(-95)),
+						model = import:WaitForChild("Diamond_Pickaxe"),
+					},	
+					{
+						name = "fireball",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Fireball"),
+					},	
+					{
+						name = "telepearl",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Telepearl"),
+					},
+					{
+						name = "diamond",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(-90)),
+						model = import:WaitForChild("Diamond"),
+					},
+					{
+						name = "iron",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Iron"),
+					},
+					{
+						name = "gold",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+						model = import:WaitForChild("Gold"),
+					},
+					{
+						name = "emerald",
+						offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(-90)),
+						model = import:WaitForChild("Emerald"),
+					},
+					{
+						name = "wood_bow",
+						offset = CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)),
+						model = import:WaitForChild("Bow"),
+					},
+					{
+						name = "wood_crossbow",
+						offset = CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)),
+						model = import:WaitForChild("Bow"),
+					},
+					{
+						name = "tactical_crossbow",
+						offset = CFrame.Angles(math.rad(0), math.rad(180), math.rad(-90)),
+						model = import:WaitForChild("Bow"),
+					},
+					{
+						name = "wood_dao",
+						offset = CFrame.Angles(math.rad(0), math.rad(89), math.rad(-90)),
+						model = import:WaitForChild("Wood_Sword"),
+					},
+					{
+						name = "stone_dao",
+						offset = CFrame.Angles(math.rad(0), math.rad(89), math.rad(-90)),
+						model = import:WaitForChild("Stone_Sword"),
+					},
+					{
+						name = "iron_dao",
+						offset = CFrame.Angles(math.rad(0), math.rad(89), math.rad(-90)),
+						model = import:WaitForChild("Iron_Sword"),
+					},
+					{
+						name = "diamond_dao",
+						offset = CFrame.Angles(math.rad(0), math.rad(89), math.rad(-90)),
+						model = import:WaitForChild("Diamond_Sword"),
+					},
+				}
+				local func = Workspace.Camera.Viewmodel.ChildAdded:Connect(function(tool)	
+					if not tool:IsA("Accessory") then return end	
+					for _, v in ipairs(index) do	
+						if v.name == tool.Name then		
+							for _, part in ipairs(tool:GetDescendants()) do
+								if part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("UnionOperation") then				
+									part.Transparency = 1
+								end			
+							end		
+							local model = v.model:Clone()
+							model.CFrame = tool:WaitForChild("Handle").CFrame * v.offset
+							model.CFrame *= CFrame.Angles(math.rad(0), math.rad(-50), math.rad(0))
+							model.Parent = tool			
+							local weld = Instance.new("WeldConstraint", model)
+							weld.Part0 = model
+							weld.Part1 = tool:WaitForChild("Handle")			
+							local tool2 = Players.LocalPlayer.Character:WaitForChild(tool.Name)			
+							for _, part in ipairs(tool2:GetDescendants()) do
+								if part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("UnionOperation") then				
+									part.Transparency = 1				
+								end			
+							end			
+							local model2 = v.model:Clone()
+							model2.Anchored = false
+							model2.CFrame = tool2:WaitForChild("Handle").CFrame * v.offset
+							model2.CFrame *= CFrame.Angles(math.rad(0), math.rad(-50), math.rad(0))
+							if v.name:match("rageblade") then
+								model2.CFrame *= CFrame.new(0.7, 0, -.7)                           
+							elseif v.name:match("sword") or v.name:match("blade") then
+								model2.CFrame *= CFrame.new(.2, 0, -.8)
+							elseif v.name:match("dao") then
+								model2.CFrame *= CFrame.new(.7, 0, -1.3)
+							elseif v.name:match("axe") and not v.name:match("pickaxe") and v.name:match("diamond") then
+								model2.CFrame *= CFrame.new(.08, 0, -1.1) - Vector3.new(0, 0, -1.1)
+							elseif v.name:match("axe") and not v.name:match("pickaxe") and not v.name:match("diamond") then
+								model2.CFrame *= CFrame.new(-.2, 0, -2.4) + Vector3.new(0, 0, 2.12)
+							elseif v.name:match("diamond_pickaxe") then
+								model2.CFrame *= CFrame.new(.2, 0, -.26)
+							elseif v.name:match("iron") and not v.name:match("iron_pickaxe") then
+								model2.CFrame *= CFrame.new(0, -.24, 0)
+							elseif v.name:match("gold") then
+								model2.CFrame *= CFrame.new(0, .03, 0)
+							elseif v.name:match("diamond") or v.name:match("emerald") then
+								model2.CFrame *= CFrame.new(0, -.03, 0)
+							elseif v.name:match("telepearl") then
+								model2.CFrame *= CFrame.new(.1, 0, .1)
+							elseif v.name:match("fireball") then
+								model2.CFrame *= CFrame.new(.28, .1, 0)
+							elseif v.name:match("bow") and not v.name:match("crossbow") then
+								model2.CFrame *= CFrame.new(-.2, .1, -.05)
+							elseif v.name:match("wood_crossbow") and not v.name:match("tactical_crossbow") then
+								model2.CFrame *= CFrame.new(-.5, 0, .05)
+							elseif v.name:match("tactical_crossbow") and not v.name:match("wood_crossbow") then
+								model2.CFrame *= CFrame.new(-.35, 0, -1.2)
+							else
+								model2.CFrame *= CFrame.new(.0, 0, -.06)
+							end
+							model2.Parent = tool2
+							local weld2 = Instance.new("WeldConstraint", model)
+							weld2.Part0 = model2
+							weld2.Part1 = tool2:WaitForChild("Handle")
+						end
+					end
+				end)
+			end)
+		end,
+        FirstHighResPack = function() 
+            task.spawn(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/512xPack"))()   
+           end)
+		end,
+		SecondHighResPack = function() 
+            task.spawn(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/SnoopyOwner/TexturePacks/main/1024xPack"))()   
+           end)
+		end
+	}
+
+	TexturePacks = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+		["Name"] = "TexturePacks",
+		["Function"] = function(callback) 
+			if callback then 
+				if not transformed then
+					transformed = true
+					packfunctions[packselected["Value"]]()
+				end
+            else 
+                if TexturePacks.Enabled == false then
+                    task.wait()
+                    func:disconnect()
+                end
+			end
+		end,
+		["ExtraText"] = function()
+			return packselected["Value"]
+		end
+	})
+	packselected = TexturePacks.CreateDropdown({
+		["Name"] = "Pack",
+		["Function"] = function() end,
+		["List"] = {"GlizzyPack", 
+		"FirstPack", "SecondPack", 
+		"ThirdPack", "FourthPack", 
+		"FifthPack", "SixthPack", 
+		"SeventhPack","EighthPack", 
+		"EgirlPack", "CottonCandy", 
+		"Pack512x", "Pack1056x",
+	    "PrivatePack", "DemonSlayerPack"}
+	})
+end)
+runFunction(function()
+	local transformed = false
+	local GameThemeV2 = {["Enabled"] = false}
+	local themeselected = {["Value"] = "OldBedwars"}
+
+	local themefunctions = {
+		NebulaSky = function() 
+			task.spawn(function() 
+
+				local Vignette = true
+
+
+				local Lighting = game:GetService("Lighting")
+				local ColorCor = Instance.new("ColorCorrectionEffect")
+				local SunRays = Instance.new("SunRaysEffect")
+				local Sky = Instance.new("Sky")
+				local Atm = Instance.new("Atmosphere")
+
+
+				for i, v in pairs(Lighting:GetChildren()) do
+					if v then
+						v:Destroy()
+					end
+				end
+
+				ColorCor.Parent = Lighting
+				SunRays.Parent = Lighting
+				Sky.Parent = Lighting
+				Atm.Parent = Lighting
+
+				if Vignette == true then
+					local Gui = Instance.new("ScreenGui")
+					Gui.Parent = StarterGui
+					Gui.IgnoreGuiInset = true
+
+					local ShadowFrame = Instance.new("ImageLabel")
+					ShadowFrame.Parent = Gui
+					ShadowFrame.AnchorPoint = Vector2.new(0,1,0)
+					ShadowFrame.Position = UDim2.new(0,0,0,0)
+					ShadowFrame.Size = UDim2.new(0,0,0,0)
+					ShadowFrame.BackgroundTransparency = 1
+					ShadowFrame.Image = ""
+					ShadowFrame.ImageTransparency = 1
+					ShadowFrame.ZIndex = 0
+				end
+
+
+				ColorCor.Brightness = 0.1
+				ColorCor.Contrast = 0.5
+				ColorCor.Saturation = -0.3
+				ColorCor.TintColor = Color3.fromRGB(255, 235, 203)
+
+				SunRays.Intensity = 0.075
+				SunRays.Spread = 0.727
+
+				Sky.SkyboxBk = "rbxassetid://13581437029"
+				Sky.SkyboxDn = "rbxassetid://13581439832"
+				Sky.SkyboxFt = "rbxassetid://13581447312"
+				Sky.SkyboxLf = "rbxassetid://13581443463"
+				Sky.SkyboxRt = "rbxassetid://13581452875"
+				Sky.SkyboxUp = "rbxassetid://13581450222"
+				Sky.SunAngularSize = 10
+
+				Lighting.Ambient = Color3.fromRGB(2,2,2)
+				Lighting.Brightness = 0.3
+				Lighting.ColorShift_Bottom = Color3.fromRGB(0,0,0)
+				Lighting.ColorShift_Top = Color3.fromRGB(0,0,0)
+				Lighting.EnvironmentDiffuseScale = 0.2
+				Lighting.EnvironmentSpecularScale = 0.2
+				Lighting.GlobalShadows = true
+				Lighting.OutdoorAmbient = Color3.fromRGB(0,0,0)
+				Lighting.ShadowSoftness = 0.2
+				Lighting.ClockTime = 15
+				Lighting.GeographicLatitude = 45
+				Lighting.ExposureCompensation = 0.5
+
+				Atm.Density = 0.364
+				Atm.Offset = 0.556
+				Atm.Color = Color3.fromRGB(179, 59, 249)
+				Atm.Decay = Color3.fromRGB(155, 212, 255)
+				Atm.Glare = 0.36
+				Atm.Haze = 1.72	
+
+			end)
+		end,
+		PinkMountainSky = function() 
+			task.spawn(function()
+				game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=160188495"
+				game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=160188614"
+				game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=160188609"
+				game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=160188589"
+				game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=160188597"
+				game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=160188588"
+			end)
+		end,
+		CitySky = function() 
+			task.spawn(function()
+				game.Lighting.Sky.SkyboxBk = "rbxassetid://11263062161"
+				game.Lighting.Sky.SkyboxDn = "rbxassetid://11263065295"
+				game.Lighting.Sky.SkyboxFt = "rbxassetid://11263066644"
+				game.Lighting.Sky.SkyboxLf = "rbxassetid://11263068413"
+				game.Lighting.Sky.SkyboxRt = "rbxassetid://11263069782"
+				game.Lighting.Sky.SkyboxUp = "rbxassetid://11263070890"
+			end)
+		end,
+		SpaceSky = function() 
+			task.spawn(function()
+				game.Lighting.Sky.SkyboxBk = "rbxassetid://1735468027"
+				game.Lighting.Sky.SkyboxDn = "rbxassetid://1735500192"
+				game.Lighting.Sky.SkyboxFt = "rbxassetid://1735467260"
+				game.Lighting.Sky.SkyboxLf = "rbxassetid://1735467682"
+				game.Lighting.Sky.SkyboxRt = "rbxassetid://1735466772"
+				game.Lighting.Sky.SkyboxUp = "rbxassetid://1735500898"
+			end)
+		end,
+		EgirlSky = function() 
+			task.spawn(function()
+				game.Lighting.Sky.SkyboxBk = "rbxassetid://2128458653"
+				game.Lighting.Sky.SkyboxDn = "rbxassetid://2128462480"
+				game.Lighting.Sky.SkyboxFt = "rbxassetid://2128458653"
+				game.Lighting.Sky.SkyboxLf = "rbxassetid://2128462027"
+				game.Lighting.Sky.SkyboxRt = "rbxassetid://2128462027"
+				game.Lighting.Sky.SkyboxUp = "rbxassetid://2128462236"
+				game.Lighting.sky.SunAngularSize = 4
+				game.Lighting.sky.MoonTextureId = "rbxassetid://8139665943"
+				game.Lighting.sky.MoonAngularSize = 11
+				lightingService.Atmosphere.Color = Color3.fromRGB(255, 214, 172)
+				lightingService.Atmosphere.Decay = Color3.fromRGB(255, 202, 175)
+			end)
+		end,
+		PinkSky = function() 
+			task.spawn(function()
+				game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=271042516"
+				game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=271077243"
+				game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=271042556"
+				game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=271042310"
+				game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=271042467"
+				game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=271077958"
+			end)
+		end
+	}
+
+	GameThemeV2 = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+		["Name"] = "GameThemeV2",
+		["Function"] = function(callback) 
+			if callback then 
+				if not transformed then
+					transformed = true
+					themefunctions[themeselected["Value"]]()
+				else
+					GameThemeV2["ToggleButton"](false)
+				end
+			else
+				CreateNotification("GameTheme", "Disabled Next Game", 10)
+			end
+		end,
+		["ExtraText"] = function()
+			return themeselected["Value"]
+		end
+	})
+	themeselected = GameThemeV2.CreateDropdown({
+		["Name"] = "Theme",
+		["Function"] = function() end,
+		["List"] = {"NebulaSky", "PinkMountainSky", "CitySky", "PinkSky", "EgirlSky", "SpaceSky"}
+	})
+end)
+
+				
 
 --until I find a way to make the spam switch item thing not bad I'll just get rid of it, sorry.
 local Scaffold = {Enabled = false}
